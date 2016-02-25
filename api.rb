@@ -11,4 +11,14 @@ class Api < Grape::API
     params.to_json
   end
 
+  params do
+    optional :fields, type: Array do
+      optional :field1, type: Integer
+      optional :field2, type: Integer
+      optional :field3, type: Integer
+    end
+  end
+  post '/post' do
+    params.to_json
+  end
 end
